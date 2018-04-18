@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index');
+Route::get('/products', 'PagesController@products');
+Route::get('/catagorys', 'PagesController@catagorys');
+Route::get('/shoppingcart', 'PagesController@shoppingcart');
+
+Route::resource('posts', 'PostController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('/about', function () {
+//     return view('pages.about');
+// });
+
+// Route::get('/users/{id}/{name}', function ($id, $name) {
+//     return 'this is user '.$name. ' with an id of ' .$id;
+// });
